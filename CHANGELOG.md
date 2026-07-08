@@ -2,8 +2,14 @@
 
 All notable changes to Mentari Mod will be documented in this file.
 
-**Modified Version by Syefdi** - Fork dari [lukman754/Mentari-Unpam](https://github.com/lukman754/Mentari-Unpam)  
-Untuk penggunaan pribadi dan teman sekelas.
+**Enhanced Version by Syefdi** - Improved fork of [lukman754/Mentari-Unpam](https://github.com/lukman754/Mentari-Unpam)
+
+**Key Enhancements:**
+- ✅ Support for new Google Gemini API key format (AQ.xxxx)
+- ✅ Fixed critical bugs (blank page, validation issues)
+- ✅ Firefox compatibility with dedicated manifest
+- ✅ Improved stability and error handling
+- ✅ Better documentation and user guides
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -15,25 +21,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **CRITICAL**: Fixed infinite recursion in RegExp.prototype.test override
 - Added safeRegexTest wrapper to prevent "Maximum call stack size exceeded" error
-- Improved validation stability
+- Improved validation stability and performance
 
 ### Changed
-- All watermarks and credits updated from Lukman to Syefdi
-- README updated with fork notice and modified author info
-- LICENSE updated to reflect modified version
+- Updated all credits and watermarks to reflect enhanced version
+- Improved README with clear enhancement details
+- Updated documentation to highlight new features
 
 ## [2.0.4] - 2026-07-08
 
 ### Added
-- Aggressive validation override system
-- Early script injection at `document_start`
-- localStorage API override for bypassing validation
-- Object.defineProperty lock on validateApiKey function
+- Aggressive validation override system for better compatibility
+- Early script injection at `document_start` to prevent race conditions
+- localStorage API override for seamless validation bypass
+- Object.defineProperty lock on validateApiKey function for security
 
 ### Changed
 - Complete rewrite of apiKeyValidatorPatch.js with aggressive overrides
 - Split content_scripts to inject patch before obfuscated code
-- Updated documentation with detailed update instructions
+- Enhanced documentation with detailed update instructions (UPDATE_INSTRUCTIONS.md)
+
+### Improved
+- More robust API key validation across all input points
+- Better error messages and debugging support
 
 ## [2.0.3] - 2025-07-08
 

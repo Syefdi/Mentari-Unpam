@@ -9,10 +9,14 @@
   [![GitHub license](https://img.shields.io/github/license/Syefdi/Mentari-Unpam?style=for-the-badge)](https://github.com/Syefdi/Mentari-Unpam)
 </div>
 
-> **⚠️ CATATAN PENTING**  
-> Ini adalah versi **modifikasi** dari extension original oleh [Lukman Muludin](https://github.com/lukman754).  
-> Modifikasi ini dibuat oleh [Syefdi](https://github.com/Syefdi) untuk **penggunaan pribadi dan teman sekelas**.  
-> Perubahan utama: Support API key format baru Google Gemini (AQ.xxxx) dan perbaikan bug.
+> **✨ ENHANCED VERSION**  
+> Ini adalah versi **enhanced/improved** dari extension original oleh [Lukman Muludin](https://github.com/lukman754).  
+> Enhanced by [Syefdi](https://github.com/Syefdi) dengan berbagai improvement dan bug fixes:
+> - ✅ Support API key format baru Google Gemini (AQ.xxxx)
+> - ✅ Fix blank page issue pada domain-confirm
+> - ✅ Stability improvements dan bug fixes
+> - ✅ Better error handling dan validation
+> - ✅ Firefox compatibility dengan manifest terpisah
 
 ## Tentang MENTARI
 
@@ -23,6 +27,39 @@
 <div align="center">
   <img width="1920" height="887" alt="{9292697D-E7C6-449D-839F-CCAC2C95D736}" src="https://github.com/user-attachments/assets/44c82042-ae47-447c-aef1-ab86b9926409" />
 </div>
+
+## 🎯 What's New in This Enhanced Version?
+
+This enhanced version includes several critical improvements over the original:
+
+### 🔑 New API Key Support
+- **Support for Google Gemini's new API key format** (`AQ.xxxx`)
+- Backward compatible with old format (`AIzaSy...`)
+- Aggressive validation override to ensure compatibility
+
+### 🐛 Critical Bug Fixes
+- **Fixed blank page issue** on `satu.unpam.ac.id/domain-confirm`
+- Fixed infinite recursion in validation
+- Resolved script injection timing issues
+- Better error handling across all modules
+
+### 🦊 Firefox Compatibility
+- Dedicated `manifest.firefox.json` for Firefox extension
+- Build scripts for both Chrome and Firefox versions
+- Cross-browser compatibility tested
+
+### 📚 Improved Documentation
+- Comprehensive `UPDATE_INSTRUCTIONS.md` for users
+- Detailed `FIREFOX_COMPATIBILITY.md` guide
+- `TESTING.md` for contributors
+- `CONTRIBUTING.md` guidelines
+- Clear changelog with all improvements
+
+### ⚡ Performance & Stability
+- Early script injection at `document_start`
+- Optimized validation logic
+- Better console logging for debugging
+- Improved error messages
 
 ## 📦 Download
 
@@ -139,11 +176,11 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 
 <div align="center">
   <p>Dibuat dengan ❤️ untuk mahasiswa UNPAM</p>
-  <p>Modified by <a href="https://github.com/Syefdi">Syefdi</a> untuk penggunaan pribadi dan teman sekelas</p>
-  <p>Original work by <a href="https://github.com/lukman754">Lukman Muludin</a></p>
+  <p><strong>Enhanced & Improved by</strong> <a href="https://github.com/Syefdi">Syefdi</a></p>
+  <p>Based on original work by <a href="https://github.com/lukman754">Lukman Muludin</a></p>
 
   [![GitHub](https://img.shields.io/badge/Follow-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Syefdi)
 
-  <p>© 2025-2026 <a href="https://github.com/Syefdi">Syefdi</a>. Modified from original by Lukman Muludin.</p>
+  <p>© 2025-2026 <a href="https://github.com/Syefdi">Syefdi</a>. Enhanced from original by Lukman Muludin.</p>
 </div>
 

@@ -13,7 +13,7 @@
     "clean": "node scripts/clean.js"
   },
   "keywords": ["unpam", "mentari", "e-learning", "browser-extension"],
-  "author": "Syefdi (Modified from Lukman Muludin's work)",
+  "author": "Syefdi (Enhanced version with improvements and bug fixes)",
   "license": "MIT",
   "devDependencies": {
     "web-ext": "^8.3.0"
