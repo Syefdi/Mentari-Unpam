@@ -5,6 +5,25 @@ All notable changes to Mentari Mod will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.3] - 2025-07-08
+
+### Added
+- API Key validator patch to support new Google Gemini API key format (`AQ....`)
+- Backward compatibility with old API key format (`AIzaSy...`)
+- Console logging for API key validation debugging
+- Automatic input field validation patching
+- Real-time API key format detection
+
+### Fixed
+- Fixed API key validation rejecting new Google Gemini API format
+- Extension now accepts both old (`AIzaSy...`) and new (`AQ....`) API key formats
+- Improved error messages for invalid API keys
+
+### Technical
+- Added `apiKeyValidatorPatch.js` content script
+- Implemented regex patterns for both API key formats
+- Added MutationObserver for dynamic content
+
 ## [2.0.2] - 2025-07-08
 
 ### Fixed
