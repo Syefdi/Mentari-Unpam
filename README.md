@@ -21,30 +21,31 @@
 
 ## 📦 Download
 
-Untuk mendapatkan versi terbaru dengan dukungan Firefox:
+<p align="center">
+   <a href="https://github.com/Syefdi/Mentari-Unpam/archive/refs/heads/main.zip" style="display: block; margin-bottom: 10px;">
+    <img src="https://img.shields.io/badge/⬇%20Download-Chrome/Edge/Brave-00C853?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+  </a>
+  <br>
+  <a href="https://github.com/Syefdi/Mentari-Unpam/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/⬇%20Download-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white"/>
+  </a>
+</p>
 
+Atau clone dengan Git:
 ```bash
-# Clone repository
 git clone https://github.com/Syefdi/Mentari-Unpam.git
-cd Mentari-Unpam
-
-# Build untuk browser yang Anda gunakan
-npm install
-npm run build:chrome    # Untuk Chrome/Edge/Brave
-npm run build:firefox   # Untuk Firefox
 ```
-
-Atau download langsung dari [Releases](https://github.com/Syefdi/Mentari-Unpam/releases) (jika sudah tersedia).
 
 
 ## Cara Instalasi
 
 ### Chrome, Edge, Brave (Chromium-based)
 ```
-1️. Clone atau download repository ini
-2️. Buka terminal dan jalankan:
+1️. Download dan ekstrak file zip dari button di atas
+2️. Buka terminal di folder hasil ekstrak, jalankan:
    npm install
    npm run build:chrome
+   (Atau jalankan build-firefox.bat di Windows)
 3️. Buka browser Chromium (Chrome/Edge/Brave)
 4️. Ketik chrome://extensions/ di address bar
 5️. Aktifkan "Mode Pengembang" (toggle di pojok kanan)
@@ -54,10 +55,11 @@ Atau download langsung dari [Releases](https://github.com/Syefdi/Mentari-Unpam/r
 
 ### Firefox
 ```
-1️. Clone atau download repository ini
-2️. Buka terminal dan jalankan:
+1️. Download dan ekstrak file zip dari button di atas
+2️. Buka terminal di folder hasil ekstrak, jalankan:
    npm install
    npm run build:firefox
+   (Atau jalankan build-firefox.bat di Windows / ./build-firefox.sh di Linux/Mac)
 3️. Buka Firefox
 4️. Ketik about:debugging di address bar
 5️. Klik "This Firefox" di sidebar
@@ -67,10 +69,6 @@ Atau download langsung dari [Releases](https://github.com/Syefdi/Mentari-Unpam/r
 
 Catatan: Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
 Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
-
-Alternatif tanpa Node.js:
-- Windows: Jalankan build-firefox.bat
-- Linux/macOS: Jalankan ./build-firefox.sh
 ```
 
 ### Mises Browser (iOS/Android)
