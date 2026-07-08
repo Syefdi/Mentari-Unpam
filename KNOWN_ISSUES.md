@@ -42,7 +42,21 @@
 
 ## Chrome/Edge/Brave Issues
 
-Saat ini tidak ada issue yang diketahui di browser Chromium-based.
+### 1. Blank Page di my.unpam.ac.id setelah domain confirmation
+**Status**: FIXED (v2.0.2)  
+**Description**: Halaman my.unpam.ac.id jadi blank putih setelah redirect dari satu.unpam.ac.id/domain-confirm
+
+**Penyebab**:
+- Script presensi.js dijalankan di halaman domain-confirm
+- Script mencari token yang tidak ada di halaman redirect
+- Menyebabkan error dan halaman jadi blank
+
+**Fix**:
+- Added `run_at: "document_idle"` untuk menunggu halaman full load
+- Exclude satu.unpam.ac.id dari content script injection
+- Script hanya dijalankan di halaman my.unpam.ac.id yang sudah fully loaded
+
+**Versi**: Fixed di v2.0.2+
 
 ## General Issues
 

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Mentari Mod",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Ekstensi untuk meningkatkan pengalaman belajar di MENTARI UNPAM dengan fitur pelacakan forum, asisten AI, bantuan quiz, dan manajemen presensi.",
   "permissions": ["scripting", "activeTab"],
   "host_permissions": [
@@ -42,8 +42,12 @@
     },
     {
       "matches": ["https://my.unpam.ac.id/*"],
-      "exclude_matches": ["https://mentari.unpam.ac.id/login"],
-      "js": ["src/content/presensi.js", "src/content/QuickSurvey.js"]
+      "exclude_matches": [
+        "https://mentari.unpam.ac.id/login",
+        "https://satu.unpam.ac.id/*"
+      ],
+      "js": ["src/content/presensi.js", "src/content/QuickSurvey.js"],
+      "run_at": "document_idle"
     },
     {
       "matches": [

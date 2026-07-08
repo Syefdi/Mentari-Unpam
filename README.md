@@ -68,7 +68,7 @@ git clone https://github.com/Syefdi/Mentari-Unpam.git
    (JANGAN pilih folder, pilih FILE manifest.json di dalam folder build/firefox)
 8️. Ekstensi siap digunakan!
 
-⚠️ CATATAN PENTING untuk Firefox:
+CATATAN PENTING untuk Firefox:
 - Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
 - Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
 - Beberapa fitur mungkin memiliki perbedaan kecil dengan versi Chrome karena perbedaan API browser.

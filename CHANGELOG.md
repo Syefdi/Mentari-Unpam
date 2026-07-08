@@ -5,6 +5,17 @@ All notable changes to Mentari Mod will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.2] - 2025-07-08
+
+### Fixed
+- Fixed blank page issue on my.unpam.ac.id after domain confirmation redirect
+- Added `run_at: "document_idle"` to presensi scripts to wait for full page load
+- Excluded satu.unpam.ac.id from content script injection to prevent script errors on redirect pages
+- Improved error handling for token detection on my.unpam.ac.id
+
+### Changed
+- Updated manifest version to 2.0.2
+
 ## [2.0.1] - 2025-07-08
 
 ### Added
