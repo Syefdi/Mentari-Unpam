@@ -68,8 +68,11 @@ git clone https://github.com/Syefdi/Mentari-Unpam.git
    (JANGAN pilih folder, pilih FILE manifest.json di dalam folder build/firefox)
 8️. Ekstensi siap digunakan!
 
-Catatan: Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
-Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
+⚠️ CATATAN PENTING untuk Firefox:
+- Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
+- Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
+- Beberapa fitur mungkin memiliki perbedaan kecil dengan versi Chrome karena perbedaan API browser.
+- Jika ada fitur yang tidak berfungsi, coba reload extension dari about:debugging atau restart Firefox.
 ```
 
 ### Mises Browser (iOS/Android)
