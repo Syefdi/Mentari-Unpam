@@ -4,10 +4,15 @@
   # MENTARI MOD
   ### *Manajemen Terpadu Pembelajaran Daring*
   
-  [![GitHub issues](https://img.shields.io/github/issues/Lukman754/mentari-unpam?color=green&style=for-the-badge)](https://github.com/Lukman754/mentari-unpam/issues)
-  [![GitHub stars](https://img.shields.io/github/stars/Lukman754/mentari-unpam?style=for-the-badge)](https://github.com/Lukman754/mentari-unpam/stargazers)
-  [![GitHub license](https://img.shields.io/github/license/Lukman754/mentari-unpam?style=for-the-badge)](https://github.com/Lukman754/mentari-unpam)
+  [![GitHub issues](https://img.shields.io/github/issues/Syefdi/Mentari-Unpam?color=green&style=for-the-badge)](https://github.com/Syefdi/Mentari-Unpam/issues)
+  [![GitHub stars](https://img.shields.io/github/stars/Syefdi/Mentari-Unpam?style=for-the-badge)](https://github.com/Syefdi/Mentari-Unpam/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/Syefdi/Mentari-Unpam?style=for-the-badge)](https://github.com/Syefdi/Mentari-Unpam)
 </div>
+
+> **⚠️ CATATAN PENTING**  
+> Ini adalah versi **modifikasi** dari extension original oleh [Lukman Muludin](https://github.com/lukman754).  
+> Modifikasi ini dibuat oleh [Syefdi](https://github.com/Syefdi) untuk **penggunaan pribadi dan teman sekelas**.  
+> Perubahan utama: Support API key format baru Google Gemini (AQ.xxxx) dan perbaikan bug.
 
 ## Tentang MENTARI
 
@@ -134,11 +139,11 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 
 <div align="center">
   <p>Dibuat dengan ❤️ untuk mahasiswa UNPAM</p>
+  <p>Modified by <a href="https://github.com/Syefdi">Syefdi</a> untuk penggunaan pribadi dan teman sekelas</p>
+  <p>Original work by <a href="https://github.com/lukman754">Lukman Muludin</a></p>
 
-  [![GitHub](https://img.shields.io/badge/Follow-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/lukman754)
-  [![Instagram](https://img.shields.io/badge/Follow-Instagram-E4405F?style=for-the-badge&logo=instagram)](https://instagram.com/_.chopin)
-  [![Support Me](https://img.shields.io/badge/Support_with_Coffee-FF813F?style=for-the-badge&logo=buymeacoffee&logoColor=white)](https://saweria.co/chopin)
+  [![GitHub](https://img.shields.io/badge/Follow-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Syefdi)
 
-  <p>© 2025 <a href="https://instagram.com/_.chopin">Lukman Muludin</a>. All Rights Reserved.</p>
+  <p>© 2025-2026 <a href="https://github.com/Syefdi">Syefdi</a>. Modified from original by Lukman Muludin.</p>
 </div>
 
