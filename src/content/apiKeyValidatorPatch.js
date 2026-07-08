@@ -43,21 +43,59 @@
    * AGGRESSIVELY override window.validateApiKey - make it a constant
    */
   Object.defineProperty(window, 'validateApiKey', {
-    value: validateGeminiApiKey,
+    value: safeValidateGeminiApiKey,
     writable: false,
     configurable: false
   });
   console.log('[Mentari Mod] LOCKED window.validateApiKey function');
 
   /**
-   * Override RegExp.prototype.test to intercept AIzaSy validation
+   * Store original regex test to avoid recursion
    */
   const originalRegExpTest = RegExp.prototype.test;
+  const safeRegexTest = function(regex, str) {
+    return originalRegExpTest.call(regex, str);
+  };
+
+  /**
+   * Safe validator that uses original regex test
+   */
+  function safeValidateGeminiApiKey(apiKey) {
+    if (!apiKey || typeof apiKey !== 'string') {
+      return false;
+    }
+
+    const trimmedKey = apiKey.trim();
+
+    if (trimmedKey.length === 0) {
+      return false;
+    }
+
+    // Old format: AIzaSy... (use original regex test to avoid recursion)
+    if (safeRegexTest(/^AIzaSy[A-Za-z0-9_-]{33,}$/, trimmedKey)) {
+      console.log('[Mentari Mod] Valid API key: Old format (AIzaSy...)');
+      return true;
+    }
+
+    // New format: AQ.... (use original regex test to avoid recursion)
+    if (safeRegexTest(/^AQ\.[A-Za-z0-9_-]{20,}$/, trimmedKey)) {
+      console.log('[Mentari Mod] Valid API key: New format (AQ....)');
+      return true;
+    }
+
+    console.warn('[Mentari Mod] Invalid API key format:', trimmedKey.substring(0, 10) + '...');
+    return false;
+  }
+
+  /**
+   * Override RegExp.prototype.test to intercept AIzaSy validation
+   */
   RegExp.prototype.test = function(str) {
     // Check if this is the old API key validation regex
-    if (this.source.includes('AIza') || this.source.includes('AIzaSy')) {
+    const source = this.source;
+    if (source && (source.includes('AIza') || source.includes('AIzaSy'))) {
       console.log('[Mentari Mod] Intercepted old regex validation, using new validator');
-      return validateGeminiApiKey(str);
+      return safeValidateGeminiApiKey(str);
     }
     return originalRegExpTest.call(this, str);
   };
@@ -107,7 +145,7 @@
       input.addEventListener('blur', function(e) {
         const value = this.value.trim();
         if (value.length > 0) {
-          const isValid = validateGeminiApiKey(value);
+          const isValid = safeValidateGeminiApiKey(value);
           
           // Override any error messages
           const errorElements = document.querySelectorAll('[id*="validation"], [id*="error"], [class*="error"], [class*="validation"]');
