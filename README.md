@@ -64,7 +64,8 @@ git clone https://github.com/Syefdi/Mentari-Unpam.git
 4️. Ketik about:debugging di address bar
 5️. Klik "This Firefox" di sidebar
 6️. Klik "Load Temporary Add-on"
-7️. Pilih file manifest.json di folder build/firefox
+7️. PENTING: Masuk ke folder build/firefox, lalu pilih file "manifest.json" 
+   (JANGAN pilih folder, pilih FILE manifest.json di dalam folder build/firefox)
 8️. Ekstensi siap digunakan!
 
 Catatan: Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
