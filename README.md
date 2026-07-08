@@ -93,22 +93,26 @@ CATATAN PENTING untuk Firefox:
 > Ya, extension ini hanya membantu mahasiswa untuk melacak forum diskusi yang sedang berjalan tanpa mencarinya satu-persatu dan mempermudah penggunaan mentari dengan berbagai shortcut
 
 > **Apakah bisa digunakan di Firefox?**
-> Ya! Mentari Mod v2.0 sudah mendukung Firefox. Download versi Firefox dan ikuti panduan instalasi di atas.
+> Ya! Mentari Mod v2.0+ sudah mendukung Firefox. Download versi Firefox dan ikuti panduan instalasi di atas.
 
 > **Apakah berfungsi di semua browser Chromium?**
 > Ya, extension ini kompatibel dengan Chrome, Edge, Brave, dan browser berbasis Chromium lainnya.
 
 > **Bagaimana cara mendapatkan API Key Gemini?**
-> 1. Kunjungi https://makersuite.google.com/app/apikey
+> 1. Kunjungi https://aistudio.google.com/app/apikey
 > 2. Login dengan akun Google
 > 3. Klik "Create API Key"
-> 4. Copy API key dan paste di popup extension
+> 4. Copy API key (format lama `AIzaSy...` atau format baru `AQ....` sama-sama didukung)
+> 5. Paste di popup extension atau input di halaman MENTARI
+
+> **API key saya diawali "AQ." apakah valid?**
+> Ya! Sejak v2.0.3, extension sudah mendukung format API key baru dari Google yang diawali `AQ.` Kedua format (lama dan baru) sama-sama bisa digunakan.
 
 > **Extension tidak muncul setelah instalasi?**
 > Pastikan Developer Mode aktif dan folder yang dipilih benar. Coba restart browser.
 
 > **Fitur AI tidak bekerja?**
-> Pastikan API key Gemini sudah diisi dengan benar di popup extension.
+> Pastikan API key Gemini sudah diisi dengan benar di popup extension. Cek console browser untuk error messages.
 
 ## 🤝 Contributing
 
