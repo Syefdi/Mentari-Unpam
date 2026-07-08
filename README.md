@@ -20,43 +20,57 @@
 </div>
 
 ## 📦 Download
-<p align="center">
-   <a href="https://github.com/lukman754/Mentari-Unpam/releases/download/v2.0/Mentari-Unpam-v2.0.zip" style="display: block; margin-bottom: 10px;">
-    <img src="https://img.shields.io/badge/⬇%20Download-Chrome/Edge/Brave-00C853?style=for-the-badge&logo=googlechrome&logoColor=white"/>
-  </a>
-  <br>
-  <a href="https://github.com/lukman754/Mentari-Unpam/releases/download/v2.0/Mentari-Unpam-Firefox-v2.0.zip">
-    <img src="https://img.shields.io/badge/⬇%20Download-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white"/>
-  </a>
-</p>
+
+Untuk mendapatkan versi terbaru dengan dukungan Firefox:
+
+```bash
+# Clone repository
+git clone https://github.com/Syefdi/Mentari-Unpam.git
+cd Mentari-Unpam
+
+# Build untuk browser yang Anda gunakan
+npm install
+npm run build:chrome    # Untuk Chrome/Edge/Brave
+npm run build:firefox   # Untuk Firefox
+```
+
+Atau download langsung dari [Releases](https://github.com/Syefdi/Mentari-Unpam/releases) (jika sudah tersedia).
 
 
 ## Cara Instalasi
 
 ### Chrome, Edge, Brave (Chromium-based)
 ```
-1️. Unduh file ekstensi mentari-mod.zip
-2️. Ekstrak file zip ke folder di komputer Anda
+1️. Clone atau download repository ini
+2️. Buka terminal dan jalankan:
+   npm install
+   npm run build:chrome
 3️. Buka browser Chromium (Chrome/Edge/Brave)
 4️. Ketik chrome://extensions/ di address bar
 5️. Aktifkan "Mode Pengembang" (toggle di pojok kanan)
-6️. Klik "Load unpacked" dan pilih folder hasil ekstraksi
+6️. Klik "Load unpacked" dan pilih folder build/chrome
 7️. Ekstensi siap digunakan! 
 ```
 
 ### Firefox
 ```
-1️. Unduh file ekstensi mentari-mod-firefox.zip
-2️. Ekstrak file zip ke folder di komputer Anda
+1️. Clone atau download repository ini
+2️. Buka terminal dan jalankan:
+   npm install
+   npm run build:firefox
 3️. Buka Firefox
 4️. Ketik about:debugging di address bar
 5️. Klik "This Firefox" di sidebar
 6️. Klik "Load Temporary Add-on"
-7️. Pilih file manifest.json di folder hasil ekstraksi
+7️. Pilih file manifest.json di folder build/firefox
 8️. Ekstensi siap digunakan!
 
 Catatan: Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
 Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
+
+Alternatif tanpa Node.js:
+- Windows: Jalankan build-firefox.bat
+- Linux/macOS: Jalankan ./build-firefox.sh
 ```
 
 ### Mises Browser (iOS/Android)
