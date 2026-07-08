@@ -1,13 +1,13 @@
 /**
- * API Key Validator Patch
- * This script patches the API key validation to accept new format (AQ....)
- * Injected into mentari.unpam.ac.id pages
+ * API Key Validator Patch - AGGRESSIVE MODE
+ * This script forcefully overrides ALL validation to accept new format (AQ....)
+ * Injected into mentari.unpam.ac.id pages BEFORE other scripts
  */
 
 (function() {
   'use strict';
 
-  console.log('[Mentari Mod] API Key Validator Patch loaded');
+  console.log('[Mentari Mod] AGGRESSIVE API Key Validator Patch loaded');
 
   /**
    * Improved API Key Validator that supports both formats
@@ -25,13 +25,13 @@
 
     // Old format: AIzaSy... (typically 39 characters)
     if (/^AIzaSy[A-Za-z0-9_-]{33,}$/.test(trimmedKey)) {
-      console.log('[Mentari Mod] Valid API key detected: Old format (AIzaSy...)');
+      console.log('[Mentari Mod] Valid API key: Old format (AIzaSy...)');
       return true;
     }
 
     // New format: AQ.... (starts with AQ. followed by base64-like characters)
-    if (/^AQ\.[A-Za-z0-9_-]{30,}$/.test(trimmedKey)) {
-      console.log('[Mentari Mod] Valid API key detected: New format (AQ....)');
+    if (/^AQ\.[A-Za-z0-9_-]{20,}$/.test(trimmedKey)) {
+      console.log('[Mentari Mod] Valid API key: New format (AQ....)');
       return true;
     }
 
@@ -40,65 +40,99 @@
   }
 
   /**
-   * Override window validation if exists
+   * AGGRESSIVELY override window.validateApiKey - make it a constant
    */
-  if (typeof window.validateApiKey === 'function') {
-    const originalValidate = window.validateApiKey;
-    window.validateApiKey = function(apiKey) {
-      const result = validateGeminiApiKey(apiKey);
-      console.log('[Mentari Mod] API Key validation override:', result);
-      return result;
-    };
-    console.log('[Mentari Mod] Overridden existing validateApiKey function');
-  } else {
-    // Create new validation function
-    window.validateApiKey = validateGeminiApiKey;
-    console.log('[Mentari Mod] Created new validateApiKey function');
-  }
+  Object.defineProperty(window, 'validateApiKey', {
+    value: validateGeminiApiKey,
+    writable: false,
+    configurable: false
+  });
+  console.log('[Mentari Mod] LOCKED window.validateApiKey function');
+
+  /**
+   * Override RegExp.prototype.test to intercept AIzaSy validation
+   */
+  const originalRegExpTest = RegExp.prototype.test;
+  RegExp.prototype.test = function(str) {
+    // Check if this is the old API key validation regex
+    if (this.source.includes('AIza') || this.source.includes('AIzaSy')) {
+      console.log('[Mentari Mod] Intercepted old regex validation, using new validator');
+      return validateGeminiApiKey(str);
+    }
+    return originalRegExpTest.call(this, str);
+  };
+  console.log('[Mentari Mod] Overridden RegExp.prototype.test');
+
+  /**
+   * Override localStorage.setItem to allow any API key format
+   */
+  const originalSetItem = Storage.prototype.setItem;
+  Storage.prototype.setItem = function(key, value) {
+    if (key === 'geminiApiKey') {
+      console.log('[Mentari Mod] Intercepted geminiApiKey save:', value.substring(0, 10) + '...');
+      // Always allow saving if it's a reasonable length
+      if (value && value.length > 20) {
+        console.log('[Mentari Mod] Allowing API key save (bypassed validation)');
+      }
+    }
+    return originalSetItem.call(this, key, value);
+  };
+  console.log('[Mentari Mod] Overridden localStorage.setItem');
 
   /**
    * Patch any input validation that might be happening
    */
   function patchInputValidation() {
     // Find Gemini API key input fields
-    const apiKeyInputs = document.querySelectorAll('input[type="text"][placeholder*="API"], input[type="text"][placeholder*="key"], input[id*="gemini"], input[name*="apikey"]');
+    const apiKeyInputs = document.querySelectorAll('input[type="text"][placeholder*="API"], input[type="text"][placeholder*="key"], input[id*="gemini"], input[name*="apikey"], input[id*="apiKey"]');
     
     apiKeyInputs.forEach(input => {
-      console.log('[Mentari Mod] Found API key input:', input);
+      console.log('[Mentari Mod] Found API key input:', input.id || input.name);
       
-      // Remove existing validation
+      // Remove existing validation attributes
       input.removeAttribute('pattern');
       input.removeAttribute('minlength');
       input.removeAttribute('maxlength');
       
-      // Add custom validation on blur/change
-      input.addEventListener('blur', function() {
+      // Override the input's validation
+      input.addEventListener('input', function(e) {
+        const value = this.value.trim();
+        if (value.length > 0 && (value.startsWith('AQ.') || value.startsWith('AIzaSy'))) {
+          // Mark as valid
+          this.setCustomValidity('');
+        }
+      }, true);
+
+      // Add blur validation
+      input.addEventListener('blur', function(e) {
         const value = this.value.trim();
         if (value.length > 0) {
           const isValid = validateGeminiApiKey(value);
           
-          // Find error message element (usually next sibling or nearby)
-          let errorElement = this.nextElementSibling;
-          if (errorElement && errorElement.classList.contains('error')) {
-            if (isValid) {
-              errorElement.textContent = '';
-              errorElement.style.display = 'none';
-              this.style.borderColor = '#4CAF50';
-            } else {
-              errorElement.textContent = 'Format API key tidak valid. Harus diawali "AIzaSy" atau "AQ."';
-              errorElement.style.display = 'block';
-              this.style.borderColor = '#f44336';
+          // Override any error messages
+          const errorElements = document.querySelectorAll('[id*="validation"], [id*="error"], [class*="error"], [class*="validation"]');
+          errorElements.forEach(el => {
+            if (el.textContent.includes('AIza') || el.textContent.includes('Format')) {
+              if (isValid) {
+                el.textContent = '';
+                el.style.display = 'none';
+              } else {
+                el.textContent = 'Format API key tidak valid. Harus diawali "AIzaSy" atau "AQ."';
+                el.style.display = 'block';
+              }
             }
+          });
+          
+          // Visual feedback
+          if (isValid) {
+            this.style.borderColor = '#4CAF50';
+            this.style.background = 'rgba(76, 175, 80, 0.1)';
           } else {
-            // Change border color as visual feedback
-            if (isValid) {
-              this.style.borderColor = '#4CAF50';
-            } else {
-              this.style.borderColor = '#f44336';
-            }
+            this.style.borderColor = '#f44336';
+            this.style.background = 'rgba(244, 67, 54, 0.1)';
           }
         }
-      });
+      }, true);
     });
   }
 
@@ -111,40 +145,32 @@
     
     // Check if this is a Gemini API request
     if (typeof url === 'string' && url.includes('generativelanguage.googleapis.com')) {
-      console.log('[Mentari Mod] Gemini API request detected');
-      
-      // Extract API key from URL or headers
-      if (url.includes('key=')) {
-        const apiKey = new URL(url).searchParams.get('key');
-        if (apiKey && validateGeminiApiKey(apiKey)) {
-          console.log('[Mentari Mod] API key in request is valid');
-        }
-      }
+      console.log('[Mentari Mod] Gemini API request detected, allowing through');
     }
     
     return originalFetch.apply(this, args);
   };
+  console.log('[Mentari Mod] Overridden window.fetch');
 
-  // Run patch on DOM ready
+  // Run immediately
+  patchInputValidation();
+
+  // Run on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', patchInputValidation);
-  } else {
-    patchInputValidation();
   }
 
-  // Also run on dynamic content changes
+  // Watch for dynamic content
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.addedNodes.length > 0) {
-        patchInputValidation();
-      }
+    patchInputValidation();
+  });
+
+  if (document.body) {
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
     });
-  });
+  }
 
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-
-  console.log('[Mentari Mod] API Key Validator Patch initialized');
+  console.log('[Mentari Mod] AGGRESSIVE API Key Validator Patch initialized and ready');
 })();

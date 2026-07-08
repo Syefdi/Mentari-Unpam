@@ -1,6 +1,6 @@
 {
   "name": "mentari-mod",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "Ekstensi browser untuk meningkatkan pengalaman belajar di MENTARI UNPAM",
   "scripts": {
     "validate": "node scripts/validate-manifest.js",
