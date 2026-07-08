@@ -21,14 +21,19 @@
 
 ## 📦 Download
 <p align="center">
-   <a href="https://github.com/lukman754/Mentari-Unpam/releases/download/v2.0/Mentari-Unpam-v2.0.zip" style="display: block; width: 60%;">
-    <img src="https://img.shields.io/badge/⬇%20Download-Mentari%20Mod%20v2.0-00C853?style=for-the-badge&logo=github&logoColor=white"/>
+   <a href="https://github.com/lukman754/Mentari-Unpam/releases/download/v2.0/Mentari-Unpam-v2.0.zip" style="display: block; margin-bottom: 10px;">
+    <img src="https://img.shields.io/badge/⬇%20Download-Chrome/Edge/Brave-00C853?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+  </a>
+  <br>
+  <a href="https://github.com/lukman754/Mentari-Unpam/releases/download/v2.0/Mentari-Unpam-Firefox-v2.0.zip">
+    <img src="https://img.shields.io/badge/⬇%20Download-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white"/>
   </a>
 </p>
 
 
 ## Cara Instalasi
-### Windows/macOS (Chrome, Edge, Brave)
+
+### Chrome, Edge, Brave (Chromium-based)
 ```
 1️. Unduh file ekstensi mentari-mod.zip
 2️. Ekstrak file zip ke folder di komputer Anda
@@ -39,6 +44,21 @@
 7️. Ekstensi siap digunakan! 
 ```
 
+### Firefox
+```
+1️. Unduh file ekstensi mentari-mod-firefox.zip
+2️. Ekstrak file zip ke folder di komputer Anda
+3️. Buka Firefox
+4️. Ketik about:debugging di address bar
+5️. Klik "This Firefox" di sidebar
+6️. Klik "Load Temporary Add-on"
+7️. Pilih file manifest.json di folder hasil ekstraksi
+8️. Ekstensi siap digunakan!
+
+Catatan: Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
+Untuk instalasi permanen, ekstensi perlu di-sign oleh Mozilla atau gunakan Firefox Developer Edition.
+```
+
 ### Mises Browser (iOS/Android)
 ```
 1️. Download Mises Browser (AppStore/PlayStore)
@@ -47,7 +67,7 @@
 4️. Pilih "Extensions"
 5️. Aktifkan "Developer Mode"
 6️. Klik "+ (from .zip/.crx/.user.js)"
-7️. Pilih file Mentari od.zip
+7️. Pilih file Mentari Mod.zip
 8️. Refresh halaman MENTARI 
 ```
 
@@ -55,6 +75,36 @@
 > [!IMPORTANT]
 > **Apakah Extension ini aman?**
 > Ya, extension ini hanya membantu mahasiswa untuk melacak forum diskusi yang sedang berjalan tanpa mencarinya satu-persatu dan mempermudah penggunaan mentari dengan berbagai shortcut
+
+> **Apakah bisa digunakan di Firefox?**
+> Ya! Mentari Mod v2.0 sudah mendukung Firefox. Download versi Firefox dan ikuti panduan instalasi di atas.
+
+> **Apakah berfungsi di semua browser Chromium?**
+> Ya, extension ini kompatibel dengan Chrome, Edge, Brave, dan browser berbasis Chromium lainnya.
+
+> **Bagaimana cara mendapatkan API Key Gemini?**
+> 1. Kunjungi https://makersuite.google.com/app/apikey
+> 2. Login dengan akun Google
+> 3. Klik "Create API Key"
+> 4. Copy API key dan paste di popup extension
+
+> **Extension tidak muncul setelah instalasi?**
+> Pastikan Developer Mode aktif dan folder yang dipilih benar. Coba restart browser.
+
+> **Fitur AI tidak bekerja?**
+> Pastikan API key Gemini sudah diisi dengan benar di popup extension.
+
+## 🤝 Contributing
+
+Kontribusi sangat diterima! Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan berkontribusi.
+
+## 📚 Dokumentasi
+
+- [QUICK_START.md](QUICK_START.md) - Panduan memulai cepat
+- [CHANGELOG.md](CHANGELOG.md) - Riwayat perubahan versi
+- [FIREFOX_COMPATIBILITY.md](FIREFOX_COMPATIBILITY.md) - Panduan kompatibilitas Firefox
+- [TESTING.md](TESTING.md) - Panduan testing
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Panduan kontribusi
 
 ## 📄 Lisensi
 
