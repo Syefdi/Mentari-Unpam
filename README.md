@@ -9,14 +9,14 @@
   [![GitHub license](https://img.shields.io/github/license/Syefdi/Mentari-Unpam?style=for-the-badge)](https://github.com/Syefdi/Mentari-Unpam)
 </div>
 
-> **✨ ENHANCED VERSION**  
+> **ENHANCED VERSION**  
 > Ini adalah versi **enhanced/improved** dari extension original oleh [Lukman Muludin](https://github.com/lukman754).  
 > Enhanced by [Syefdi](https://github.com/Syefdi) dengan berbagai improvement dan bug fixes:
-> - ✅ Support API key format baru Google Gemini (AQ.xxxx)
-> - ✅ Fix blank page issue pada domain-confirm
-> - ✅ Stability improvements dan bug fixes
-> - ✅ Better error handling dan validation
-> - ✅ Firefox compatibility dengan manifest terpisah
+> - Support API key format baru Google Gemini (AQ.xxxx)
+> - Fix blank page issue pada domain-confirm
+> - Stability improvements dan bug fixes
+> - Better error handling dan validation
+> - Firefox compatibility dengan manifest terpisah
 
 ## Tentang MENTARI
 
@@ -28,40 +28,40 @@
   <img width="1920" height="887" alt="{9292697D-E7C6-449D-839F-CCAC2C95D736}" src="https://github.com/user-attachments/assets/44c82042-ae47-447c-aef1-ab86b9926409" />
 </div>
 
-## 🎯 What's New in This Enhanced Version?
+## What's New in This Enhanced Version?
 
 This enhanced version includes several critical improvements over the original:
 
-### 🔑 New API Key Support
+### New API Key Support
 - **Support for Google Gemini's new API key format** (`AQ.xxxx`)
 - Backward compatible with old format (`AIzaSy...`)
 - Aggressive validation override to ensure compatibility
 
-### 🐛 Critical Bug Fixes
+### Critical Bug Fixes
 - **Fixed blank page issue** on `satu.unpam.ac.id/domain-confirm`
 - Fixed infinite recursion in validation
 - Resolved script injection timing issues
 - Better error handling across all modules
 
-### 🦊 Firefox Compatibility
+### Firefox Compatibility
 - Dedicated `manifest.firefox.json` for Firefox extension
 - Build scripts for both Chrome and Firefox versions
 - Cross-browser compatibility tested
 
-### 📚 Improved Documentation
+### Improved Documentation
 - Comprehensive `UPDATE_INSTRUCTIONS.md` for users
 - Detailed `FIREFOX_COMPATIBILITY.md` guide
 - `TESTING.md` for contributors
 - `CONTRIBUTING.md` guidelines
 - Clear changelog with all improvements
 
-### ⚡ Performance & Stability
+### Performance & Stability
 - Early script injection at `document_start`
 - Optimized validation logic
 - Better console logging for debugging
 - Improved error messages
 
-## 📦 Download
+## Download
 
 <p align="center">
    <a href="https://github.com/Syefdi/Mentari-Unpam/archive/refs/heads/main.zip" style="display: block; margin-bottom: 10px;">
@@ -83,32 +83,32 @@ git clone https://github.com/Syefdi/Mentari-Unpam.git
 
 ### Chrome, Edge, Brave (Chromium-based)
 ```
-1️. Download dan ekstrak file zip dari button di atas
-2️. Buka terminal di folder hasil ekstrak, jalankan:
+1. Download dan ekstrak file zip dari button di atas
+2. Buka terminal di folder hasil ekstrak, jalankan:
    npm install
    npm run build:chrome
    (Atau jalankan build-firefox.bat di Windows)
-3️. Buka browser Chromium (Chrome/Edge/Brave)
-4️. Ketik chrome://extensions/ di address bar
-5️. Aktifkan "Mode Pengembang" (toggle di pojok kanan)
-6️. Klik "Load unpacked" dan pilih folder build/chrome
-7️. Ekstensi siap digunakan! 
+3. Buka browser Chromium (Chrome/Edge/Brave)
+4. Ketik chrome://extensions/ di address bar
+5. Aktifkan "Mode Pengembang" (toggle di pojok kanan)
+6. Klik "Load unpacked" dan pilih folder build/chrome
+7. Ekstensi siap digunakan! 
 ```
 
 ### Firefox
 ```
-1️. Download dan ekstrak file zip dari button di atas
-2️. Buka terminal di folder hasil ekstrak, jalankan:
+1. Download dan ekstrak file zip dari button di atas
+2. Buka terminal di folder hasil ekstrak, jalankan:
    npm install
    npm run build:firefox
    (Atau jalankan build-firefox.bat di Windows / ./build-firefox.sh di Linux/Mac)
-3️. Buka Firefox
-4️. Ketik about:debugging di address bar
-5️. Klik "This Firefox" di sidebar
-6️. Klik "Load Temporary Add-on"
-7️. PENTING: Masuk ke folder build/firefox, lalu pilih file "manifest.json" 
+3. Buka Firefox
+4. Ketik about:debugging di address bar
+5. Klik "This Firefox" di sidebar
+6. Klik "Load Temporary Add-on"
+7. PENTING: Masuk ke folder build/firefox, lalu pilih file "manifest.json" 
    (JANGAN pilih folder, pilih FILE manifest.json di dalam folder build/firefox)
-8️. Ekstensi siap digunakan!
+8. Ekstensi siap digunakan!
 
 CATATAN PENTING untuk Firefox:
 - Di Firefox, ekstensi yang di-load temporary akan hilang setelah browser ditutup.
@@ -119,14 +119,14 @@ CATATAN PENTING untuk Firefox:
 
 ### Mises Browser (iOS/Android)
 ```
-1️. Download Mises Browser (AppStore/PlayStore)
-2️. Buka Mises Browser di perangkat Anda
-3️. Ketuk menu (tiga titik) di pojok kanan atas
-4️. Pilih "Extensions"
-5️. Aktifkan "Developer Mode"
-6️. Klik "+ (from .zip/.crx/.user.js)"
-7️. Pilih file Mentari Mod.zip
-8️. Refresh halaman MENTARI 
+1. Download Mises Browser (AppStore/PlayStore)
+2. Buka Mises Browser di perangkat Anda
+3. Ketuk menu (tiga titik) di pojok kanan atas
+4. Pilih "Extensions"
+5. Aktifkan "Developer Mode"
+6. Klik "+ (from .zip/.crx/.user.js)"
+7. Pilih file Mentari Mod.zip
+8. Refresh halaman MENTARI 
 ```
 
 ## FAQ
@@ -156,11 +156,11 @@ CATATAN PENTING untuk Firefox:
 > **Fitur AI tidak bekerja?**
 > Pastikan API key Gemini sudah diisi dengan benar di popup extension. Cek console browser untuk error messages.
 
-## 🤝 Contributing
+## Contributing
 
 Kontribusi sangat diterima! Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan berkontribusi.
 
-## 📚 Dokumentasi
+## Dokumentasi
 
 - [QUICK_START.md](QUICK_START.md) - Panduan memulai cepat
 - [CHANGELOG.md](CHANGELOG.md) - Riwayat perubahan versi
@@ -168,14 +168,14 @@ Kontribusi sangat diterima! Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk pandu
 - [TESTING.md](TESTING.md) - Panduan testing
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Panduan kontribusi
 
-## 📄 Lisensi
+## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail lebih lanjut.
 
 ---
 
 <div align="center">
-  <p>Dibuat dengan ❤️ untuk mahasiswa UNPAM</p>
+  <p>Dibuat dengan cinta untuk mahasiswa UNPAM</p>
   <p><strong>Enhanced & Improved by</strong> <a href="https://github.com/Syefdi">Syefdi</a></p>
   <p>Based on original work by <a href="https://github.com/lukman754">Lukman Muludin</a></p>
 
